@@ -16,7 +16,8 @@
     "react-scripts": "3.0.1",
     "react-toastify": "^5.1.0",
     "styled-components": "^4.2.0",
-    "styled-reset": "^2.0.10"
+    "styled-reset": "^2.0.10",
+    "typeface-noto-serif": "0.0.72"
   },
   "scripts": {
     "start": "react-scripts start",

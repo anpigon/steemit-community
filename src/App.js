@@ -12,8 +12,8 @@ function App() {
   return (
     <ApolloProvider client={ client }>
       {/* <ThemeProvider theme={ Theme }>
-        <>
-          <GlobalStyles/> */}
+        <>*/}
+          <GlobalStyles/> 
           <Router>
             <Routes />
           </Router>
