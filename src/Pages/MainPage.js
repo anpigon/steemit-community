@@ -71,13 +71,19 @@ const MainPage = props => {
       },
     });
     console.log(data);
-    setLoading(false);
-    setPosts(data.getPosts);
+    await setLoading(false);
+    await setPosts(data.getPosts);
   };
 
+  // didMount
   useEffect(() => {
     getPosts({ tags: ['kr'] });
   }, []);
+
+  const selectCategory = async tags => {
+    await setPosts([]);
+    await getPosts({ tags });
+  };
 
   const { classes } = props;
 
@@ -106,7 +112,7 @@ const MainPage = props => {
         <Toolbar variant="dense" className={classes.toolbarSecondary}>
           {Object.entries(sections).map(([section, tags]) => (
             <Typography color="inherit" noWrap key={section}>
-              <Button size="small" onClick={() => getPosts({ tags })}>
+              <Button size="small" onClick={() => selectCategory(tags)}>
                 {section}
               </Button>
             </Typography>

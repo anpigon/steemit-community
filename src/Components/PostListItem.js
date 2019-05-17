@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getReputation, transferTime } from '../Util/SteemUtil'
+import PropTypes from 'prop-types';
+import { getReputation, transferTime } from '../Util/SteemUtil';
 
 const PostWrapper = styled.li`
   min-height: 180px;
@@ -9,8 +10,9 @@ const PostWrapper = styled.li`
   position: relative;
   background-color: #fff;
   box-sizing: border-box;
-  font-family: 'Noto Serif KR', "Noto Sans Light", "Malgun Gothic", sans-serif, serif;
-`
+  font-family: 'Noto Serif KR', 'Noto Sans Light', 'Malgun Gothic', sans-serif,
+    serif;
+`;
 
 const PostLink = styled.a`
   display: block;
@@ -106,7 +108,10 @@ const By = styled.span`
 
 const PostListItem = ({ data }) => {
   // console.log(data)
-  const payout = data.curator_payout_value + data.pending_payout_value + data.total_payout_value;
+  const payout =
+    data.curator_payout_value +
+    data.pending_payout_value +
+    data.total_payout_value;
   const hasImage = Boolean(data.image);
   return (
     <PostWrapper>
@@ -124,20 +129,29 @@ const PostListItem = ({ data }) => {
             <PostAppend>{transferTime(data.created)}</PostAppend>
             <Dot />
             <By>by</By>
-            <PostAppend>{data.author}({getReputation(data.author_reputation, 0)})</PostAppend>
+            <PostAppend>
+              {data.author}({getReputation(data.author_reputation, 0)})
+            </PostAppend>
           </PostAppendWrapper>
         </PostContent>
-        {
-          hasImage && (
-            <PostThumb>
-              <PostImg src={`https://cdn.steemitimages.com/640x0/${data.image}`} />
-            </PostThumb>
-          )
-        }
-        
+        {hasImage && (
+          <PostThumb>
+            <PostImg
+              src={`https://cdn.steemitimages.com/640x0/${data.image}`}
+            />
+          </PostThumb>
+        )}
       </PostLink>
     </PostWrapper>
-  )
-}
+  );
+};
+
+PostListItem.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    summary: PropTypes.number,
+    created: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  }).isRequired,
+};
 
 export default PostListItem;
