@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/steemit-community/static/js/main.c1e9b79c.chunk.js",
-    "main.js.map": "/steemit-community/static/js/main.c1e9b79c.chunk.js.map",
+    "main.js": "/steemit-community/static/js/main.5bf7520c.chunk.js",
+    "main.js.map": "/steemit-community/static/js/main.5bf7520c.chunk.js.map",
     "runtime~main.js": "/steemit-community/static/js/runtime~main.b0c72367.js",
     "runtime~main.js.map": "/steemit-community/static/js/runtime~main.b0c72367.js.map",
-    "static/js/2.3925de31.chunk.js": "/steemit-community/static/js/2.3925de31.chunk.js",
-    "static/js/2.3925de31.chunk.js.map": "/steemit-community/static/js/2.3925de31.chunk.js.map",
+    "static/js/2.224d3d48.chunk.js": "/steemit-community/static/js/2.224d3d48.chunk.js",
+    "static/js/2.224d3d48.chunk.js.map": "/steemit-community/static/js/2.224d3d48.chunk.js.map",
     "index.html": "/steemit-community/index.html",
-    "precache-manifest.1a44eb689d0eeda07f64f48e23e1e3e9.js": "/steemit-community/precache-manifest.1a44eb689d0eeda07f64f48e23e1e3e9.js",
+    "precache-manifest.d3efd7ac30e61160e7f7ece0abffa6e1.js": "/steemit-community/precache-manifest.d3efd7ac30e61160e7f7ece0abffa6e1.js",
     "service-worker.js": "/steemit-community/service-worker.js"
   }
 }
