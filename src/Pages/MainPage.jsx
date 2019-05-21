@@ -125,7 +125,11 @@ const MainPage = props => {
             <Grid item xs={12} md={8}>
               <PostList>
                 {posts.map(post => (
-                  <PostListItem key={post.post_id} data={post} />
+                  <PostListItem
+                    key={post.post_id}
+                    data={post}
+                    onclick={() => {}}
+                  />
                 ))}
                 {/* <PostListItem data={
 {"post_id":74639213,"author":"miri.choi","permlink":"r1rpd","title":"[커리지] 바쁜 운동인을 위한 단백질 간식 정기배송 스타트업","author_reputation":3639794194362,"summary":"운동인의 월간 단백질 박스 🏋 📦 바쁜 일상, 시간 쪼개어 운동하는 당신에게 매월 엄선된 다양한 단백질 간식을 배송합니다 🚛 치솟는 고깃값, 비싼 프로틴바 허나 부족한 단백질 섭","tags":["kr","kr-life","kr-event","kr-market","jjangjjangman"],"image":"https://cdn.steemitimages.com/DQmXbeGDKZvi1PCKhJqWyUbCrynGZTuC9NqjXdKdCZroJcU/IMG_5470.JPG","created":20190512142030,"total_payout_value":0,"curator_payout_value":0,"pending_payout_value":0.217,"vote_count":14,"comment_count":1,"__typename":"Post"}
