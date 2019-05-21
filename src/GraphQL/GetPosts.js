@@ -31,6 +31,7 @@ const GET_POSTS = gql`
 			pending_payout_value
 			vote_count
 			comment_count
+			# category
 		}
 }`;
 

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { getReputation, transferTime } from '../Util/SteemUtil';
+import { withRouter } from 'react-router-dom';
 
 const PostWrapper = styled.li`
   min-height: 180px;
@@ -18,6 +19,7 @@ const PostLink = styled.a`
   display: block;
   clear: both;
   overflow: hidden;
+  cursor: pointer;
 `;
 
 const PostContent = styled.div`
@@ -106,16 +108,21 @@ const By = styled.span`
   }
 `;
 
-const PostListItem = ({ data }) => {
+const PostListItem = ({ data, history, match, disabled }) => {
   // console.log(data)
   const payout =
     data.curator_payout_value +
     data.pending_payout_value +
     data.total_payout_value;
   const hasImage = Boolean(data.image);
+
   return (
-    <PostWrapper>
-      <PostLink>
+    <PostWrapper
+    // onClick={() => history.push(`/${data.category}/@${data.author}/${data.permlink}`)}
+    >
+      <PostLink
+        onClick={() => history.push(`/@${data.author}/${data.permlink}`)}
+      >
         <PostContent className={hasImage && 'has_image'}>
           <PostTitle>{data.title}</PostTitle>
           <PostSummery>{data.summary}</PostSummery>
@@ -149,9 +156,9 @@ const PostListItem = ({ data }) => {
 PostListItem.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string,
-    summary: PropTypes.number,
+    summary: PropTypes.string,
     created: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }).isRequired,
 };
 
-export default PostListItem;
+export default withRouter(PostListItem);

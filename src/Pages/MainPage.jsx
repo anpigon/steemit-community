@@ -122,7 +122,7 @@ const MainPage = props => {
         <main>
           <Grid container spacing={0} className={classes.mainGrid}>
             {/* Main content */}
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} md={9}>
               <PostList>
                 {posts.map(post => (
                   <PostListItem
@@ -139,7 +139,7 @@ const MainPage = props => {
             </Grid>
             {/* End main content */}
             {mediaXSmatches && (
-              <Grid item md={4}>
+              <Grid item md={3}>
                 <WrapWriterList>
                   <strong>추천작가</strong>
                 </WrapWriterList>
