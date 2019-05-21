@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/steemit-community/precache-manifest.e4d0520a98eb1e25f6f91958326a76d3.js"
+  "/steemit-community/precache-manifest.9ee217bf5420f550b13c7160b639d639.js"
 );
 
 self.addEventListener('message', (event) => {
